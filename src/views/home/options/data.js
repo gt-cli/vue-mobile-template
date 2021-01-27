@@ -1,6 +1,7 @@
 const data = () => {
   return {
-    userList: []
+    userList: [],
+    active: 0
   }
 }
 export default data
