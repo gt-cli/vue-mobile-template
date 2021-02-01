@@ -7,6 +7,7 @@ export default {
     if (hasLogin) {
       next()
     } else {
+      // 需要判断一下，否则直接 next('/login') 会死循环
       if (to.path === '/login') {
         next()
       } else {
