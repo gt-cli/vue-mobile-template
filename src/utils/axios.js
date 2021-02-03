@@ -1,4 +1,4 @@
-import axios from 'axios'
+import Axios from 'axios'
 import qs from 'qs'
 import { codeMessage } from './error'
 import router from '@/router/index'
@@ -77,10 +77,10 @@ class Http {
     // 合并选项
     const opts = this.mergeOptions(options)
     // 创建实例
-    const instance = axios.create()
+    const instance = Axios.create()
     // 添加拦截器
     this.setInterceptor(instance, opts.url)
-    // 当调用axios.request 时，内部会创建一个axios实例，并且给这个实例传入配置属性
+    // 当调用Axios.request 时，内部会创建一个Axios实例，并且给这个实例传入配置属性
     return instance(opts)
   }
   get(url, config = {}) {
@@ -98,4 +98,5 @@ class Http {
     })
   }
 }
+export const axios = new Http()
 export default Http
